@@ -1,6 +1,6 @@
 # Docker + October CMS 1.1.x + Composer 2.4.1 + PHP 8.0
 
-[![Build Status](https://travis-ci.org/aspendigital/docker-octobercms.svg?branch=master)](https://travis-ci.org/aspendigital/docker-octobercms) [![Docker Hub Pulls](https://img.shields.io/docker/pulls/aspendigital/octobercms.svg)](https://hub.docker.com/r/aspendigital/octobercms/) [![October CMS Build 476](https://img.shields.io/badge/October%20CMS%20Build-476-red.svg)](https://github.com/octobercms/october) [![Edge Build 476](https://img.shields.io/badge/Edge%20Build-476-lightgrey.svg)](https://github.com/octobercms/october)
+[![Docker Hub Pulls](https://img.shields.io/docker/pulls/icstudio/octobercms.svg)](https://hub.docker.com/r/icstudio/octobercms/) [![October CMS Build-v1.1.12](https://img.shields.io/badge/October%20CMS%20Build-v1.1.12-red.svg)](https://github.com/octobercms/october) [![Edge Build 476](https://img.shields.io/badge/Build-v1.1.12-lightgrey.svg)](https://github.com/octobercms/october)
 
 The docker images defined in this repository serve as a starting point for [October CMS](https://octobercms.com) projects or CI/CD image for build, test and deploy.
 
@@ -18,53 +18,15 @@ Based on [official docker PHP images](https://hub.docker.com/_/php), 8.0.x image
 
 ## Supported Tags
 
-- `build.476-php7.4-apache`, `php7.4-apache`: [php7.4/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/apache/Dockerfile)
-- `build.476-php7.4-fpm`, `php7.4-fpm`: [php7.4/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/fpm/Dockerfile)
-- `build.476-php7.3-apache`, `php7.3-apache`: [php7.3/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/apache/Dockerfile)
-- `build.476-php7.3-fpm`, `php7.3-fpm`: [php7.3/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/fpm/Dockerfile)
-- `build.476-php7.2-apache`, `php7.2-apache`, `build.476`, `latest`: [php7.2/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/apache/Dockerfile)
-- `build.476-php7.2-fpm`, `php7.2-fpm`: [php7.2/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/fpm/Dockerfile)
-- `build.476-php7.1-apache`, `php7.1-apache`: [php7.1/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/apache/Dockerfile)
-- `build.476-php7.1-fpm`, `php7.1-fpm`: [php7.1/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/fpm/Dockerfile)
-
-
-### Edge Tags
-
-- `edge-build.476-php7.4-apache`, `edge-php7.4-apache`: [php7.4/apache/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/apache/Dockerfile.edge)
-- `edge-build.476-php7.4-fpm`, `edge-php7.4-fpm`: [php7.4/fpm/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/fpm/Dockerfile.edge)
-- `edge-build.476-php7.3-apache`, `edge-php7.3-apache`: [php7.3/apache/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/apache/Dockerfile.edge)
-- `edge-build.476-php7.3-fpm`, `edge-php7.3-fpm`: [php7.3/fpm/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/fpm/Dockerfile.edge)
-- `edge-build.476-php7.2-apache`, `edge-php7.2-apache`, `edge-build.476`, `edge`: [php7.2/apache/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/apache/Dockerfile.edge)
-- `edge-build.476-php7.2-fpm`, `edge-php7.2-fpm`: [php7.2/fpm/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/fpm/Dockerfile.edge)
-- `edge-build.476-php7.1-apache`, `edge-php7.1-apache`: [php7.1/apache/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/apache/Dockerfile.edge)
-- `edge-build.476-php7.1-fpm`, `edge-php7.1-fpm`: [php7.1/fpm/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/fpm/Dockerfile.edge)
-
-
-### Develop Tags
-
-- `develop-php7.4-apache`: [php7.4/apache/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/apache/Dockerfile.develop)
-- `develop-php7.4-fpm`: [php7.4/fpm/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/fpm/Dockerfile.develop)
-- `develop-php7.3-apache`: [php7.3/apache/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/apache/Dockerfile.develop)
-- `develop-php7.3-fpm`: [php7.3/fpm/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/fpm/Dockerfile.develop)
-- `develop-php7.2-apache`, `develop`: [php7.2/apache/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/apache/Dockerfile.develop)
-- `develop-php7.2-fpm`: [php7.2/fpm/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/fpm/Dockerfile.develop)
-- `develop-php7.1-apache`: [php7.1/apache/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/apache/Dockerfile.develop)
-- `develop-php7.1-fpm`: [php7.1/fpm/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/fpm/Dockerfile.develop)
-
-### Legacy Tags
-
-> October CMS build 420+ requires PHP version 7.0 or higher
-
-- `build.419-php5.6-apache`, `php5.6-apache`: [php5.6/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php5.6/apache/Dockerfile)
-- `build.419-php5.6-fpm`, `php5.6-fpm`: [php5.6/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php5.6/fpm/Dockerfile)
-
+- `php8.0-apache`: [php8.0/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php8.0/apache/Dockerfile)
+- `php8.0-fpm`: [php8.0/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php8.0/fpm/Dockerfile)
 
 ## Quick Start
 
 To run October CMS using Docker, start a container using the latest image, mapping your local port 80 to the container's port 80:
 
 ```shell
-$ docker run -p 80:80 --name october aspendigital/octobercms:latest
+$ docker run -p 80:80 --name october icstudio/octobercms:latest
 # `CTRL-C` to stop
 $ docker rm october  # Destroys the container
 ```
@@ -72,13 +34,13 @@ $ docker rm october  # Destroys the container
 > If there is a port conflict, you will receive an error message from the Docker daemon. Try mapping to an open local port (-p 8080:80) or shut down the container or server that is on the desired port.
 
  - Visit [http://localhost](http://localhost) using your browser.
- - Login to the [backend](http://localhost/backend) with the username `admin` and password `admin`.
+ - Login to the [backend](http://localhost/backend) with the username `admin` and defined password.
  - Hit `CTRL-C` to stop the container. Running a container in the foreground will send log outputs to your terminal.
 
 Run the container in the background by passing the `-d` option:
 
 ```shell
-$ docker run -p 80:80 --name october -d aspendigital/octobercms:latest
+$ docker run -p 80:80 --name october -d icstudio/octobercms:latest
 $ docker stop october  # Stops the container. To restart `docker start october`
 $ docker rm october  # Destroys the container
 ```
@@ -95,7 +57,7 @@ $ git clone git@github.com:aspendigital/oc-resizer-plugin.git
 $ cd oc-resizer-plugin
 $ docker run -p 80:80 --rm \
   -v $(pwd):/var/www/html/plugins/aspendigital/resizer \
-  aspendigital/octobercms:latest
+  icstudio/octobercms:latest
 ```
 
 Save yourself some keyboards strokes, utilize [docker-compose](https://docs.docker.com/compose/overview/) by introducing a `docker-compose.yml` file to your project folder:
@@ -105,7 +67,7 @@ Save yourself some keyboards strokes, utilize [docker-compose](https://docs.dock
 version: '2.2'
 services:
   web:
-    image: aspendigital/octobercms
+    image: icstudio/octobercms
     ports:
       - 80:80
     volumes:
@@ -132,12 +94,12 @@ When projects require a persistent SQLite database, copy or create a new databas
 $ touch storage/database.sqlite
 $ docker run --rm \
   -v $(pwd)/storage/database.sqlite:/var/www/html/storage/database.sqlite \
-  aspendigital/octobercms php artisan october:up
+  icstudio/octobercms php artisan october:up
 
 # Now run with the volume mounted to your host
 $ docker run -p 80:80 --name october \
  -v $(pwd)/storage/database.sqlite:/var/www/html/storage/database.sqlite \
- aspendigital/octobercms
+ icstudio/octobercms
 ```
 
 #### MySQL / Postgres
@@ -149,7 +111,7 @@ Alternatively, you can host the database using another container:
 version: '2.2'
 services:
   web:
-    image: aspendigital/octobercms:latest
+    image: icstudio/octobercms:latest
     ports:
       - 80:80
     environment:
@@ -179,7 +141,7 @@ $ docker-compose exec web php artisan october:up
 You can start a cron process by setting the environment variable `ENABLE_CRON` to `true`:
 
 ```shell
-$ docker run -p 80:80 -e ENABLE_CRON=true aspendigital/octobercms:latest
+$ docker run -p 80:80 -e ENABLE_CRON=true icstudio/octobercms:latest
 ```
 
 Separate the cron process into it's own container:
@@ -189,7 +151,7 @@ Separate the cron process into it's own container:
 version: '2.2'
 services:
   web:
-    image: aspendigital/octobercms:latest
+    image: icstudio/octobercms:latest
     init: true
     restart: always
     ports:
@@ -205,7 +167,7 @@ services:
       - ./themes:/var/www/html/themes
 
   cron:
-    image: aspendigital/octobercms:latest
+    image: icstudio/octobercms:latest
     init: true
     restart: always
     command: [cron, -f]
@@ -221,7 +183,7 @@ Run the container in the background and launch an interactive shell (bash) for t
 
 
 ```shell
-$ docker run -p 80:80 --name containername -d aspendigital/octobercms:latest
+$ docker run -p 80:80 --name containername -d icstudio/octobercms:latest
 $ docker exec -it containername bash
 ```
 
@@ -343,4 +305,4 @@ List of variables used in `config/docker`
 
 ---
 
-![October](https://raw.githubusercontent.com/aspendigital/docker-octobercms/master/aspendigital-octobercms-docker-logo.png)
+![October](https://raw.githubusercontent.com/icstudio-ua/docker-octobercms/master/icstudio-octobercms-docker-logo.png)
