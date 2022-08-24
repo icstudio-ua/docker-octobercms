@@ -35,8 +35,7 @@ RUN { \
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
-RUN curl -sS https://getcomposer.org/installer | php -- --1 --install-dir=/usr/local/bin --filename=composer && \
-  /usr/local/bin/composer global require hirak/prestissimo
+RUN curl -sS https://getcomposer.org/installer | php -- --2.4.1 --install-dir=/usr/local/bin --filename=composer
 
 
 
@@ -47,6 +46,7 @@ ENV OCTOBERCMS_DEVELOP_CHECKSUM c19e809c2a7a0d6dfe0aa25c10a9bab8c8e90c4b
 ENV OCTOBERCMS_DEVELOP_COMMIT a45e8927448b7ace6551e130c1835fbb660e074b
 
 RUN git clone https://github.com/octobercms/october.git -b $OCTOBERCMS_TAG . && \
+  composer config --no-plugins allow-plugins.composer/installers false && \
   composer install --no-interaction --prefer-dist --no-scripts && \
   composer clearcache && \
   git status && git checkout modules/. && \
@@ -55,7 +55,7 @@ RUN git clone https://github.com/octobercms/october.git -b $OCTOBERCMS_TAG . && 
   echo 'config/docker' >> .git/info/exclude && \
   touch storage/database.sqlite && \
   chmod 666 storage/database.sqlite && \
-  php artisan october:up && \
+  php artisan october:migrate && \
   php artisan plugin:install october.drivers && \
   chown -R www-data:www-data /var/www/html && \
   find . -type d \( -path './plugins' -or  -path './storage' -or  -path './themes' -or  -path './plugins/*' -or  -path './storage/*' -or  -path './themes/*' \) -exec chmod g+ws {} \;

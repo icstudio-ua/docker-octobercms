@@ -63,7 +63,7 @@ install:
 before_script:
   - docker -v
   - source version
-  - IMAGE='aspendigital/octobercms';
+  - IMAGE='icstudio/octobercms';
     SLASH='/';
     if [ "$BRANCH" == "stable" ]; then
       DOCKERFILE="Dockerfile";

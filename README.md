@@ -1,62 +1,62 @@
-# Docker + October CMS
+# Docker + October CMS 1.1.x + Composer 2.4.1 + PHP 8.0
 
 [![Build Status](https://travis-ci.org/aspendigital/docker-octobercms.svg?branch=master)](https://travis-ci.org/aspendigital/docker-octobercms) [![Docker Hub Pulls](https://img.shields.io/docker/pulls/aspendigital/octobercms.svg)](https://hub.docker.com/r/aspendigital/octobercms/) [![October CMS Build 476](https://img.shields.io/badge/October%20CMS%20Build-476-red.svg)](https://github.com/octobercms/october) [![Edge Build 476](https://img.shields.io/badge/Edge%20Build-476-lightgrey.svg)](https://github.com/octobercms/october)
 
-The docker images defined in this repository serve as a starting point for [October CMS](https://octobercms.com) projects.
+The docker images defined in this repository serve as a starting point for [October CMS](https://octobercms.com) projects or CI/CD image for build, test and deploy.
 
-Based on [official docker PHP images](https://hub.docker.com/_/php), images include dependencies required by October, Composer and install the [latest release](https://octobercms.com/changelog).
+Based on [official docker PHP images](https://hub.docker.com/_/php), 8.0.x image include dependencies required by October ~1.1.x, Composer 2.4.1 and install the [latest release](https://octobercms.com/changelog).
 
-- [Supported Tags](https://github.com/aspendigital/docker-octobercms#supported-tags)
-- [Quick Start](https://github.com/aspendigital/docker-octobercms#quick-start)
-- [Working with Local Files](https://github.com/aspendigital/docker-octobercms#working-with-local-files)
-- [Database Support](https://github.com/aspendigital/docker-octobercms#database-support)
-- [Cron](https://github.com/aspendigital/docker-octobercms#cron)
-- [Command Line Tasks](https://github.com/aspendigital/docker-octobercms#command-line-tasks)
-- [App Environment](https://github.com/aspendigital/docker-octobercms#app-environment)
+- [Supported Tags](https://github.com/icstudio-ua/docker-octobercms#supported-tags)
+- [Quick Start](https://github.com/icstudio-ua/docker-octobercms#quick-start)
+- [Working with Local Files](https://github.com/icstudio-ua/docker-octobercms#working-with-local-files)
+- [Database Support](https://github.com/icstudio-ua/docker-octobercms#database-support)
+- [Cron](https://github.com/icstudio-ua/docker-octobercms#cron)
+- [Command Line Tasks](https://github.com/icstudio-ua/docker-octobercms#command-line-tasks)
+- [App Environment](https://github.com/icstudio-ua/docker-octobercms#app-environment)
 
 ---
 
 ## Supported Tags
 
-- `build.476-php7.4-apache`, `php7.4-apache`: [php7.4/apache/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/php7.4/apache/Dockerfile)
-- `build.476-php7.4-fpm`, `php7.4-fpm`: [php7.4/fpm/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/php7.4/fpm/Dockerfile)
-- `build.476-php7.3-apache`, `php7.3-apache`: [php7.3/apache/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/php7.3/apache/Dockerfile)
-- `build.476-php7.3-fpm`, `php7.3-fpm`: [php7.3/fpm/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/php7.3/fpm/Dockerfile)
-- `build.476-php7.2-apache`, `php7.2-apache`, `build.476`, `latest`: [php7.2/apache/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/php7.2/apache/Dockerfile)
-- `build.476-php7.2-fpm`, `php7.2-fpm`: [php7.2/fpm/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/php7.2/fpm/Dockerfile)
-- `build.476-php7.1-apache`, `php7.1-apache`: [php7.1/apache/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/php7.1/apache/Dockerfile)
-- `build.476-php7.1-fpm`, `php7.1-fpm`: [php7.1/fpm/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/php7.1/fpm/Dockerfile)
+- `build.476-php7.4-apache`, `php7.4-apache`: [php7.4/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/apache/Dockerfile)
+- `build.476-php7.4-fpm`, `php7.4-fpm`: [php7.4/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/fpm/Dockerfile)
+- `build.476-php7.3-apache`, `php7.3-apache`: [php7.3/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/apache/Dockerfile)
+- `build.476-php7.3-fpm`, `php7.3-fpm`: [php7.3/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/fpm/Dockerfile)
+- `build.476-php7.2-apache`, `php7.2-apache`, `build.476`, `latest`: [php7.2/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/apache/Dockerfile)
+- `build.476-php7.2-fpm`, `php7.2-fpm`: [php7.2/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/fpm/Dockerfile)
+- `build.476-php7.1-apache`, `php7.1-apache`: [php7.1/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/apache/Dockerfile)
+- `build.476-php7.1-fpm`, `php7.1-fpm`: [php7.1/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/fpm/Dockerfile)
 
 
 ### Edge Tags
 
-- `edge-build.476-php7.4-apache`, `edge-php7.4-apache`: [php7.4/apache/Dockerfile.edge](https://github.com/aspendigital/docker-octobercms/blob/master/php7.4/apache/Dockerfile.edge)
-- `edge-build.476-php7.4-fpm`, `edge-php7.4-fpm`: [php7.4/fpm/Dockerfile.edge](https://github.com/aspendigital/docker-octobercms/blob/master/php7.4/fpm/Dockerfile.edge)
-- `edge-build.476-php7.3-apache`, `edge-php7.3-apache`: [php7.3/apache/Dockerfile.edge](https://github.com/aspendigital/docker-octobercms/blob/master/php7.3/apache/Dockerfile.edge)
-- `edge-build.476-php7.3-fpm`, `edge-php7.3-fpm`: [php7.3/fpm/Dockerfile.edge](https://github.com/aspendigital/docker-octobercms/blob/master/php7.3/fpm/Dockerfile.edge)
-- `edge-build.476-php7.2-apache`, `edge-php7.2-apache`, `edge-build.476`, `edge`: [php7.2/apache/Dockerfile.edge](https://github.com/aspendigital/docker-octobercms/blob/master/php7.2/apache/Dockerfile.edge)
-- `edge-build.476-php7.2-fpm`, `edge-php7.2-fpm`: [php7.2/fpm/Dockerfile.edge](https://github.com/aspendigital/docker-octobercms/blob/master/php7.2/fpm/Dockerfile.edge)
-- `edge-build.476-php7.1-apache`, `edge-php7.1-apache`: [php7.1/apache/Dockerfile.edge](https://github.com/aspendigital/docker-octobercms/blob/master/php7.1/apache/Dockerfile.edge)
-- `edge-build.476-php7.1-fpm`, `edge-php7.1-fpm`: [php7.1/fpm/Dockerfile.edge](https://github.com/aspendigital/docker-octobercms/blob/master/php7.1/fpm/Dockerfile.edge)
+- `edge-build.476-php7.4-apache`, `edge-php7.4-apache`: [php7.4/apache/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/apache/Dockerfile.edge)
+- `edge-build.476-php7.4-fpm`, `edge-php7.4-fpm`: [php7.4/fpm/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/fpm/Dockerfile.edge)
+- `edge-build.476-php7.3-apache`, `edge-php7.3-apache`: [php7.3/apache/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/apache/Dockerfile.edge)
+- `edge-build.476-php7.3-fpm`, `edge-php7.3-fpm`: [php7.3/fpm/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/fpm/Dockerfile.edge)
+- `edge-build.476-php7.2-apache`, `edge-php7.2-apache`, `edge-build.476`, `edge`: [php7.2/apache/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/apache/Dockerfile.edge)
+- `edge-build.476-php7.2-fpm`, `edge-php7.2-fpm`: [php7.2/fpm/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/fpm/Dockerfile.edge)
+- `edge-build.476-php7.1-apache`, `edge-php7.1-apache`: [php7.1/apache/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/apache/Dockerfile.edge)
+- `edge-build.476-php7.1-fpm`, `edge-php7.1-fpm`: [php7.1/fpm/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/fpm/Dockerfile.edge)
 
 
 ### Develop Tags
 
-- `develop-php7.4-apache`: [php7.4/apache/Dockerfile.develop](https://github.com/aspendigital/docker-octobercms/blob/master/php7.4/apache/Dockerfile.develop)
-- `develop-php7.4-fpm`: [php7.4/fpm/Dockerfile.develop](https://github.com/aspendigital/docker-octobercms/blob/master/php7.4/fpm/Dockerfile.develop)
-- `develop-php7.3-apache`: [php7.3/apache/Dockerfile.develop](https://github.com/aspendigital/docker-octobercms/blob/master/php7.3/apache/Dockerfile.develop)
-- `develop-php7.3-fpm`: [php7.3/fpm/Dockerfile.develop](https://github.com/aspendigital/docker-octobercms/blob/master/php7.3/fpm/Dockerfile.develop)
-- `develop-php7.2-apache`, `develop`: [php7.2/apache/Dockerfile.develop](https://github.com/aspendigital/docker-octobercms/blob/master/php7.2/apache/Dockerfile.develop)
-- `develop-php7.2-fpm`: [php7.2/fpm/Dockerfile.develop](https://github.com/aspendigital/docker-octobercms/blob/master/php7.2/fpm/Dockerfile.develop)
-- `develop-php7.1-apache`: [php7.1/apache/Dockerfile.develop](https://github.com/aspendigital/docker-octobercms/blob/master/php7.1/apache/Dockerfile.develop)
-- `develop-php7.1-fpm`: [php7.1/fpm/Dockerfile.develop](https://github.com/aspendigital/docker-octobercms/blob/master/php7.1/fpm/Dockerfile.develop)
+- `develop-php7.4-apache`: [php7.4/apache/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/apache/Dockerfile.develop)
+- `develop-php7.4-fpm`: [php7.4/fpm/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.4/fpm/Dockerfile.develop)
+- `develop-php7.3-apache`: [php7.3/apache/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/apache/Dockerfile.develop)
+- `develop-php7.3-fpm`: [php7.3/fpm/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.3/fpm/Dockerfile.develop)
+- `develop-php7.2-apache`, `develop`: [php7.2/apache/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/apache/Dockerfile.develop)
+- `develop-php7.2-fpm`: [php7.2/fpm/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.2/fpm/Dockerfile.develop)
+- `develop-php7.1-apache`: [php7.1/apache/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/apache/Dockerfile.develop)
+- `develop-php7.1-fpm`: [php7.1/fpm/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/php7.1/fpm/Dockerfile.develop)
 
 ### Legacy Tags
 
 > October CMS build 420+ requires PHP version 7.0 or higher
 
-- `build.419-php5.6-apache`, `php5.6-apache`: [php5.6/apache/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/php5.6/apache/Dockerfile)
-- `build.419-php5.6-fpm`, `php5.6-fpm`: [php5.6/fpm/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/php5.6/fpm/Dockerfile)
+- `build.419-php5.6-apache`, `php5.6-apache`: [php5.6/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php5.6/apache/Dockerfile)
+- `build.419-php5.6-fpm`, `php5.6-fpm`: [php5.6/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php5.6/fpm/Dockerfile)
 
 
 ## Quick Start
@@ -123,7 +123,7 @@ $ docker-compose down # stop and destroy
 
 #### SQLite
 
-On build, an SQLite database is [created and initialized](https://github.com/aspendigital/docker-octobercms/blob/d3b288b9fe0606e32ac3d6466affd2996394bdca/Dockerfile.template#L54-L57) for the Docker image. With that database, users have immediate access to the backend for testing and developing themes and plugins. However, changes made to the built-in database will be lost once the container is stopped and removed.
+On build, an SQLite database is [created and initialized](https://github.com/icstudio-ua/docker-octobercms/blob/d3b288b9fe0606e32ac3d6466affd2996394bdca/Dockerfile.template#L54-L57) for the Docker image. With that database, users have immediate access to the backend for testing and developing themes and plugins. However, changes made to the built-in database will be lost once the container is stopped and removed.
 
 When projects require a persistent SQLite database, copy or create a new database to the host which can be used as a bind mount:
 
@@ -253,13 +253,13 @@ $ docker exec -it containername tinker
 
 By default, `APP_ENV` is set to `docker`.
 
-On image build, a default `.env` is [created](https://github.com/aspendigital/docker-octobercms/blob/d3b288b9fe0606e32ac3d6466affd2996394bdca/Dockerfile.template#L52) and [config files](https://github.com/aspendigital/docker-octobercms/tree/master/config/docker) for the `docker` app environment are copied to `/var/www/html/config/docker`. Environment variables can be used to override the included default settings via [`docker run`](https://docs.docker.com/engine/reference/run/#env-environment-variables) or [`docker-compose`](https://docs.docker.com/compose/environment-variables/).
+On image build, a default `.env` is [created](https://github.com/icstudio-ua/docker-octobercms/blob/d3b288b9fe0606e32ac3d6466affd2996394bdca/Dockerfile.template#L52) and [config files](https://github.com/icstudio-ua/docker-octobercms/tree/master/config/docker) for the `docker` app environment are copied to `/var/www/html/config/docker`. Environment variables can be used to override the included default settings via [`docker run`](https://docs.docker.com/engine/reference/run/#env-environment-variables) or [`docker-compose`](https://docs.docker.com/compose/environment-variables/).
 
 > __Note__: October CMS settings stored in a site's database override the config. Active theme, mail configuration, and other settings which are saved in the database will ultimately override configuration values.
 
 #### PHP configuration
 
-Recommended [settings for opcache and PHP are applied on image build](https://github.com/aspendigital/docker-octobercms/blob/f3c545fd84e293a67e63f86bf94f2bf2ab22ca15/Dockerfile.template#L9-L25).
+Recommended [settings for opcache and PHP are applied on image build](https://github.com/icstudio-ua/docker-octobercms/blob/f3c545fd84e293a67e63f86bf94f2bf2ab22ca15/Dockerfile.template#L9-L25).
 
 Values set in `docker-oc-php.ini` can be overridden by passing one of the supported PHP environment variables defined below.
 
@@ -277,7 +277,7 @@ Environment variables can be passed to both docker-compose and October CMS.
 
 #### Docker Entrypoint
 
-The following variables trigger actions run by the [entrypoint script](https://github.com/aspendigital/docker-octobercms/blob/master/docker-oc-entrypoint) at runtime.
+The following variables trigger actions run by the [entrypoint script](https://github.com/icstudio-ua/docker-octobercms/blob/master/docker-oc-entrypoint) at runtime.
 
 | Variable | Default | Action |
 | -------- | ------- | ------ |

@@ -26,14 +26,13 @@ RUN { \
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
-RUN curl -sS https://getcomposer.org/installer | php -- --1 --install-dir=/usr/local/bin --filename=composer && \
-  /usr/local/bin/composer global require hirak/prestissimo
+RUN curl -sS https://getcomposer.org/installer | php -- --2.4.1 --install-dir=/usr/local/bin --filename=composer
 
 RUN a2enmod rewrite
 
 COPY config/docker /usr/src/octobercms-config-docker
 
-ENV OCTOBERCMS_TAG v1.0.476
+ENV OCTOBERCMS_TAG v1.1.12
 ENV OCTOBERCMS_CHECKSUM bde80ee8f39c355b7e93e09100e10ec1f34b1cf4
 ENV OCTOBERCMS_CORE_BUILD 476
 ENV OCTOBERCMS_CORE_HASH 6819ec80bb4951db1139f26ca9238dbd
@@ -42,6 +41,7 @@ RUN git clone https://github.com/octobercms/october.git -b $OCTOBERCMS_TAG --dep
   echo "Update composer.json: Set explicit build references for october module dependencies" && \
   sed -i.orig "s/\(\"october\/\([rain|system|backend|cms]*\)\": \"\(~1.0\)\"\)/\"october\/\2\": \"<=${OCTOBERCMS_TAG#v}\"/g" composer.json && \
   egrep -o "['\"]october\/[rain|system|backend|cms]*['\"]\s*:\s*['\"](.+?)['\"]" composer.json && \
+  composer config --no-plugins allow-plugins.composer/installers false && \
   composer install --no-interaction --prefer-dist --no-scripts && \
   composer clearcache && \
   git status && git checkout modules/. && \

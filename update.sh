@@ -58,7 +58,7 @@ function update_dockerfiles {
 
   [ "$1" = "develop" ] && local ext=".develop"
 
-  local phpVersions=( php7.*/ )
+  local phpVersions=( php8.0/ )
 
   phpVersions=( "${phpVersions[@]%/}" )
 
@@ -66,7 +66,7 @@ function update_dockerfiles {
     phpVersionDir="$phpVersion"
     phpVersion="${phpVersion#php}"
 
-    if [ "$phpVersion" == "7.4" ]; then
+    if [ "$phpVersion" == "8.0" ]; then
       gd_config="docker-php-ext-configure gd --with-jpeg --with-webp"
       zip_config="docker-php-ext-configure zip --with-zip"
     else
@@ -107,7 +107,7 @@ function update_dockerfiles {
 }
 
 function copy_entrypoint_config {
-  local phpVersions=( php7.*/ )
+  local phpVersions=( php8.0/ )
 
   phpVersions=( "${phpVersions[@]%/}" )
 
@@ -132,10 +132,10 @@ function join {
 
 function update_buildtags {
 
-  defaultPhpVersion='php7.2'
+  defaultPhpVersion='php8.0'
   defaultVariant='apache'
 
-  phpFolders=( php7.*/ )
+  phpFolders=( php8.0/ )
   phpVersions=()
   # process in descending order
   for (( idx=${#phpFolders[@]}-1 ; idx>=0 ; idx-- )) ; do
@@ -164,7 +164,7 @@ function update_buildtags {
         fi
       fi
 
-      tagsMarkdown+="- $(join ', ' "${fullAliases[@]}"): [$dir/Dockerfile](https://github.com/aspendigital/docker-octobercms/blob/master/$dir/Dockerfile)\n"
+      tagsMarkdown+="- $(join ', ' "${fullAliases[@]}"): [$dir/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/$dir/Dockerfile)\n"
 
       # Build edge tags
       [ -f "$dir/Dockerfile.edge" ] || continue
@@ -184,7 +184,7 @@ function update_buildtags {
           fullEdgeAliases+=( "${edgeAliases[@]}" )
         fi
       fi
-      edgeTagsMarkdown+="- $(join ', ' "${fullEdgeAliases[@]}"): [$dir/Dockerfile.edge](https://github.com/aspendigital/docker-octobercms/blob/master/$dir/Dockerfile.edge)\n"
+      edgeTagsMarkdown+="- $(join ', ' "${fullEdgeAliases[@]}"): [$dir/Dockerfile.edge](https://github.com/icstudio-ua/docker-octobercms/blob/master/$dir/Dockerfile.edge)\n"
 
       # Build develop tags
       [ -f "$dir/Dockerfile.develop" ] || continue
@@ -201,7 +201,7 @@ function update_buildtags {
           fullDevelopAliases+=( "${developAliases[@]}" )
         fi
       fi
-      developTagsMarkdown+="- $(join ', ' "${fullDevelopAliases[@]}"): [$dir/Dockerfile.develop](https://github.com/aspendigital/docker-octobercms/blob/master/$dir/Dockerfile.develop)\n"
+      developTagsMarkdown+="- $(join ', ' "${fullDevelopAliases[@]}"): [$dir/Dockerfile.develop](https://github.com/icstudio-ua/docker-octobercms/blob/master/$dir/Dockerfile.develop)\n"
 
     done
   done
