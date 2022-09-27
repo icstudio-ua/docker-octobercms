@@ -2,7 +2,7 @@
 
 __Self contained automated update management.__
 
-This cron container automatically clones this repository and runs [update.sh](https://github.com/aspendigital/docker-octobercms/blob/master/update.sh). It is intended to run indefinitely in detached mode to poll the [October CMS](https://octobercms.com/) API for updates.
+This cron container automatically clones this repository and runs [update.sh](https://github.com/icstudio-ua/docker-octobercms/blob/master/update.sh). It is intended to run indefinitely in detached mode to poll the [October CMS](https://octobercms.com/) API for updates.
 
 When an update is found, the changed __version__ and __Dockerfiles__ are pushed back to the origin repository. The commit triggers an automated build process for the  [Docker Hub image icstudio/octobercms](https://hub.docker.com/r/icstudio/octobercms/).
 

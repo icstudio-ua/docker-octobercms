@@ -11,7 +11,7 @@ RUN apk add --update \
   && rm -rf /var/cache/apk/*
 
 RUN mkdir ~/.ssh && echo "StrictHostKeyChecking no" > ~/.ssh/config
-RUN git clone https://github.com/aspendigital/docker-octobercms.git
+RUN git clone https://github.com/icstudio-ua/docker-octobercms.git
 
 RUN echo "0 */3 * * * (cd /docker-octobercms; git pull; git reset --hard origin/master; exec bash update.sh --push)" > /var/spool/cron/crontabs/root
 
