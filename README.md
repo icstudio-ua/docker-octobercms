@@ -20,7 +20,8 @@ Based on [official docker PHP images](https://hub.docker.com/_/php), 8.0.x image
 
 - `php8.0-apache`: [php8.0/apache/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php8.0/apache/Dockerfile)
 - `php8.0-fpm`: [php8.0/fpm/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php8.0/fpm/Dockerfile)
-
+- `php8.0-apache-with-node`: [php8.0/fpm-with-node/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php8.0/fpm-with-node/Dockerfile)
+- `php8.0-fpm-with-node`: [php8.0/fpm-with-node/Dockerfile](https://github.com/icstudio-ua/docker-octobercms/blob/master/php8.0/fpm-with-node/Dockerfile)
 ## Quick Start
 
 To run October CMS using Docker, start a container using the latest image, mapping your local port 80 to the container's port 80:
